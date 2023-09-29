@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EncontroLKC.html</title>
     <style>
-        img {
+        foto-fundo {
             max-width: 100%;
             height: auto;
             display: block;
@@ -15,18 +15,36 @@
         }
         /* Media query para dispositivos com largura menor que 768px (por exemplo, celulares) */
         @media (max-width: 768px) {
-            img {
+            foto-fundo {
                 /* Aqui você pode aplicar estilos específicos para dispositivos móveis */
                 max-width: 90%; /* Reduz a largura da imagem para 90% da largura da tela */
                 margin-top: 10px; /* Ajusta a margem superior */
             }
         }
+        #mouseLKC {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            cursor: none; /* Oculta o cursor do mouse */
+        }
     </style>
 </head>
 
 <body>
+    <img id="mouseLKC" src="https://github.com/viniciusdmorais/encontrolkc/raw/main/img/logo%20lkc.png"
+        alt="Logo LKC">
     <img src="https://raw.githubusercontent.com/viniciusdmorais/encontrolkc/main/img/ENCONTRISTA.png"
-        alt="Feliz dia do Encontrista!!!">
+        alt="Feliz dia do Encontrista!!!" id="foto-fundo">
+
+    <script>
+        var mouseLKC = document.getElementById("mouseLKC");
+
+        document.addEventListener("mousemove", function (event) {
+            // Define a posição da imagem para seguir o mouse
+            mouseLKC.style.left = event.clientX + "px";
+            mouseLKC.style.top = event.clientY + "px";
+        });
+    </script>
 </body>
 
 </html>
